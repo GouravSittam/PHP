@@ -17,6 +17,9 @@ echo "Product: ". $product ."<br>";
 $quotient = $a / $b;
 echo "Quotient: " . $quotient . "<br>";
 
+$rem = $a % $b;
+echo "Rem: " . $rem . "<br>";
+
 $power = pow($a, $b);
 echo "Power: " . $power . "<br>";
 ?>
