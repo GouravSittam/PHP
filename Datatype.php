@@ -66,3 +66,39 @@ echo "Percentage: " . $percentage . "%<br>";
 echo "Grade: " . $grade;
 
 ?>
+
+<br>
+
+//area of circle<br>
+<?php
+$r=10;
+$area=pi()*$r*$r;
+echo $area;
+?>
+
+<br>
+
+//area of square<br>
+<?php
+$side = 10;
+$area = $side * $side;
+echo $area;
+?>
+
+<br>
+
+//area of rectangle<br>
+<?php
+$length = 20;
+$width = 30;
+$area = $length * $width;
+echo "Area: " . $area;  
+?>
+
+<br>
+//area of triange<br>
+<?php
+$base=10;
+$height=30;
+$areaa=$base*$height/2;
+echo $areaa;
