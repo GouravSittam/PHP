@@ -102,3 +102,7 @@ $base=10;
 $height=30;
 $areaa=$base*$height/2;
 echo $areaa;
+?>
+
+<br>
+
