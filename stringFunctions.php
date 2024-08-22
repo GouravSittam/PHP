@@ -23,7 +23,7 @@ echo "</pre>";
 
 <br>
 <?php
-$namee="mam";
+$namee="madam";
 $name2=strrev($namee);
 if($namee==$name2){
     echo"it is pal";
@@ -31,3 +31,4 @@ if($namee==$name2){
     echo "it is not pal";
 }
 ?>
+
