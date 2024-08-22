@@ -10,7 +10,9 @@ function add(){
 }
 //call the function and print the result
 $result=add();
-echo $result."<br>";
+echo "The sum of $x and $y is = $result"."<br>";
 
 ?>
+
+
 
