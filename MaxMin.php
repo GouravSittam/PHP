@@ -8,6 +8,7 @@ function MaxMin($arr) {
         echo "The minimum value is: $minValue";
     } else {
         echo "The array is empty.<br>";
+        
     }
 }
 ?>
