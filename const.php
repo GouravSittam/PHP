@@ -32,5 +32,24 @@ $w=2;
 $r=3;
 
 $e=$q+$w*$r**$w/$q-$w%$r;
-echo $e;
+echo $e . "<br>";
 ?>
+
+
+<?php
+$number = 7;
+$result = ($number % 2 == 0) ? "even" : "odd";
+echo "The number $number is $result."  ."<br>";
+?>
+ 
+
+ <?php
+$value1 = null;
+$value2 = null;
+$value3 = "First non-null value";
+
+$result = $value1 ?? $value2 ?? $value3;
+echo $result;
+?>
+
+
