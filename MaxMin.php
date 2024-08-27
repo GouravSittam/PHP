@@ -11,3 +11,4 @@ function MaxMin($arr) {
     }
 }
 ?>
+//null is holding empty value.
