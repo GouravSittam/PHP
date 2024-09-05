@@ -26,3 +26,4 @@
     ?>
 </body>
 </html>
+remove item, calculate total value, and in last current inventory
