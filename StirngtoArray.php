@@ -22,3 +22,4 @@ echo"<br>";
 ?>
 
 
+<!-- write a php script to add two numbers using function -->
