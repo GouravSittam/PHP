@@ -8,5 +8,5 @@ function product(...$x){
 }
 
 $res = product(2, 3, 4);
-echo $res; // Outputs 24
+echo $res; 
 ?>
