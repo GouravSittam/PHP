@@ -15,24 +15,22 @@
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_FILES["myfile"]) && $_FILES["myfile"]["error"] == 0) {
-            // File details
+
             $file_name = $_FILES["myfile"]["name"];
             $file_size = $_FILES["myfile"]["size"];
             $file_type = $_FILES["myfile"]["type"];
             $file_tempname = $_FILES["myfile"]["tmp_name"];
             
-            // Output file details
+
             echo "File Name: " . $file_name . "<br>";
             echo "File Size: " . $file_size . " bytes<br>";
             echo "File Type: " . $file_type . "<br>";
             echo "Temporary File: " . $file_tempname . "<br>";
 
-            // Create directory if not exists
             if(!is_dir("BTech-KN")){
                 mkdir("BTech-KN", 0755);
             }
 
-            // Move uploaded file
             if(move_uploaded_file($file_tempname, "BTech-KN/" . $file_name)){
                 echo "File has been uploaded successfully.<br>";
             } else {
@@ -40,12 +38,14 @@
             }
 
           
-            if($file_size > 1 * 1024 * 1024) {
-                echo "Error: File size exceeds 1MB limit.<br>";
+            if($file_size<=100) {
+                echo "File size is supported.<br>";
             }
         } else {
-            echo "Error: No file uploaded or upload error.<br>";
+            echo "File size is not supported.<br>";
         }
+        $allowed_file=["jpg","png","jpeg","gif"];
+        
     }
     ?>
 </body>
