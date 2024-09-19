@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>File Upload</title>
 </head>
 <body>
     <form action="" method="post" enctype="multipart/form-data">
@@ -15,11 +15,36 @@
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_FILES["myfile"]) && $_FILES["myfile"]["error"] == 0) {
-            print_r($_FILES["myfile"]);
-            $file_name = $_FILES["myfile"]["name"]."<br>";
-            $file_size = $_FILES["myfile"]["size"]."<br>";
-            $file_type = $_FILES["myfile"]["type"]."<br>";
-            $file_tempname = $_FILES["myfile"]["tmp_name"]."<br>";
+            // File details
+            $file_name = $_FILES["myfile"]["name"];
+            $file_size = $_FILES["myfile"]["size"];
+            $file_type = $_FILES["myfile"]["type"];
+            $file_tempname = $_FILES["myfile"]["tmp_name"];
+            
+            // Output file details
+            echo "File Name: " . $file_name . "<br>";
+            echo "File Size: " . $file_size . " bytes<br>";
+            echo "File Type: " . $file_type . "<br>";
+            echo "Temporary File: " . $file_tempname . "<br>";
+
+            // Create directory if not exists
+            if(!is_dir("BTech-KN")){
+                mkdir("BTech-KN", 0755);
+            }
+
+            // Move uploaded file
+            if(move_uploaded_file($file_tempname, "BTech-KN/" . $file_name)){
+                echo "File has been uploaded successfully.<br>";
+            } else {
+                echo "File upload failed.<br>";
+            }
+
+          
+            if($file_size > 1 * 1024 * 1024) {
+                echo "Error: File size exceeds 1MB limit.<br>";
+            }
+        } else {
+            echo "Error: No file uploaded or upload error.<br>";
         }
     }
     ?>
