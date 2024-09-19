@@ -46,8 +46,14 @@
         }
         $allowed_file=["jpg","png","jpeg","gif"];
         $myfile_extension=strtolower(pathinfo("$file_name",PATHINFO_EXTENSION));
-    echo "Extention of my file is . $myfile_extension";
-
+    echo "Extention of my file is . $myfile_extension"."<br>";
+    
+if(in_array($myfile_extension,$allowed_file)){
+    echo "File type is supported";
+}
+else{
+    echo "File type is not supported";
+}
     }
     ?>
 </body>
