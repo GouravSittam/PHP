@@ -48,13 +48,14 @@
         $myfile_extension=strtolower(pathinfo("$file_name",PATHINFO_EXTENSION));
     echo "Extention of my file is . $myfile_extension"."<br>";
     
-if(in_array($myfile_extension,$allowed_file)){
-    echo "File type is supported";
+if (in_array($myfile_extension, $allowed_file)) {
+    echo "File type is supported.<br>";
+} else {
+    echo "File type is not supported.<br>";
 }
-else{
-    echo "File type is not supported";
+
+// Close the main if statement
 }
-    }
-    ?>
+?>
 </body>
 </html>
