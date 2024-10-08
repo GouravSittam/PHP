@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cookie Management</title>
+<title>Cookie Management</title>
 </head>
 <body>
     <h1>Cookie Management</h1>
@@ -14,6 +10,11 @@
         <button type="submit" name="set_cookie">Set Cookie</button>
     </form>
 
+    <!-- Form to delete cookie -->
+    <form method="post" action="">
+        <button type="submit" name="delete_cookie">Delete Cookie</button>
+    </form>
+
     <?php
     $cookie_name = "user";
 
@@ -23,6 +24,12 @@
         $cookie_expire = time() + 3600; // 1 hour from now
         setcookie($cookie_name, $cookie_value, $cookie_expire, "/");
         echo "Cookie has been set!<br>";
+    }
+
+    // Delete the cookie if delete button is pressed
+    if (isset($_POST['delete_cookie'])) {
+        setcookie($cookie_name, "", time() - 3600, "/");
+        echo "Cookie has been deleted!<br>";
     }
 
     // Display the cookie if it is set
